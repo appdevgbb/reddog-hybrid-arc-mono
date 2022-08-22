@@ -1,4 +1,14 @@
-## Red Dog Demo - Hybrid Arc Deployment (Retail)
+## Red Dog Demo - Hybrid Arc Deployment (Mono Deployment)
+
+This is a fork and merge of two repos:
+- [Reddog Hybrid Arc](https://github.com/Azure/reddog-hybrid-arc) - Is the primary/base repo
+- [Reddog Code](https://github.com/Azure/reddog-code) - Is copied in as a sub directory into "Reddog-Hybrid-Arc"
+
+The primary goal is to have an example, single merged mono repo, to streamline a demo where we can support & demonstrate an end-to-end deployment.  This is to allow full control over a forked demo environment out of the box.  
+
+In preferred demo environment (the current multi-repo setup), we have segregated control over the Reddog-Code environment and the Reddog-Hybrid-Arc infrastructure and gitops deployment.  While that is a better "real world" example of how to create separation of controls/responsibilities, it is not as simple to replicate/fork for external use/setup out of the box without clearer setup of the automation pipeline(s).
+
+It is the goal of this repo - to maintain a mono repo version which can be forked by an individual to demonstrate an end-to-end SDLC + Deployment GitOps process.  Code can be changed in this repository and the automation pipelines can update themselves all the way into a Kuberenetes Cluster without an understanding of any other repository, except itself as the single mono repo/source of truth.  We will leverage GitHub environment variables so that these can dynamically update themselves based on the forked version.
 
 ### Background
 
